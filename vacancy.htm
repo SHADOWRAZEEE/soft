@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softorium Jobs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: aliceblue;
+        }
+
+        .content {
+            padding: 20px;
+            margin-left: 30px;
+        }
+        .job-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .button {
+            margin-top: 130px;
+            background: linear-gradient(to right, #fc6423, #fa881e 40%);
+            color: #3498db;
+            border: 1px solid #3498db;
+            margin-left: 22px;
+            width: 12rem;
+            height: 12rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            position: relative;
+            margin-right: 40px;
+        }
+
+        .button:hover {
+            background-color: aliceblue;
+        }
+
+
+
+
+        .skills-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .skills-info p {
+            white-space: nowrap;
+            color: black;
+            margin: 0;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .skill {
+            display: inline-block;
+            background-color: #f39c12;
+            color: #fff;
+            padding: 3px 15px;
+            border-radius: 25px 0 25px 0;
+            margin-left: 5px;
+        }
+        .gradient {
+            background: linear-gradient(to right, #3498db, #ff8c00 40%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 25px;
+            margin-top: 5px;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #3498db 30%, #ff8c00, transparent 60%);
+            margin-left: -500px;
+        }
+        .margin-100 {
+            margin-left: 100px;
+        }
+
+        h2 {
+            font-size: 3rem;
+        }
+        h5, h3 {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .title {
+            margin-top: 50px;
+        }
+        .title h2 {
+            font-size: 4rem;
+        }
+        .title h3 {
+            font-size: 2.75rem;
+        }
+        .main-image {
+            height: 380px;
+            width: 650px;
+            border-top-left-radius: 200px 200px;
+            border-top-right-radius: 200px 200px;
+            border-bottom-left-radius: 200px 200px;
+            border-bottom-right-radius: 200px 200px;
+        }
+        @media screen and (max-width: 770px) {
+            hr {
+                margin-left: -25px;
+            }
+            .job-content .skills, .job-content .more-skills {
+                margin-top: 10px;
+            }
+
+
+            .job-content .button {
+                margin-top: 20px;
+            }
+
+            .skills-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .skill {
+                flex-basis: calc(33.33% - 10px);
+                margin: 5px 2px;
+                white-space: nowrap;
+            }
+            .skills-info {
+                display: block;
+            }
+
+            .skills-info p{
+                font-size: 18px;
+            }
+            .button {
+                margin-left: 20rem;
+            }
+
+        }
+        @media  screen and (max-width: 500px){
+            .button {
+                margin-left: 13rem;
+            }
+        }
+        @media  screen and (max-width: 420px) and (min-width: 361px){
+
+            .button {
+                margin-left: 9rem;
+            }
+        }
+        @media  screen and (max-width: 361px){
+            .button {
+                margin-left: 10rem;
+            }
+        }
+        .description-right {
+            padding-left: 30px;
+            padding-right: 200px;
+            padding-top: 140px;
+        }
+        .description-left {
+            padding-left: 100px;
+            padding-right: 30px;
+            padding-top: 100px;
+        }
+        .container {
+            max-width: 1440px;
+            width: 100%;
+            margin: auto;
+        }
+        p {
+            letter-spacing: 0.5px;
+        }
+        .about {
+            padding: 100px 0 95px;
+        }
+        .padding-left-30{
+            padding-left: 30px;
+        }
+        .padding-bottom {
+            padding-bottom: 50px;
+        }
+        .oneS {
+            white-space: nowrap;
+            height: max-content;
+        }
+        .icon-check {
+            background-color: darkorange;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            position: relative;
+            margin-right: 12px;
+            font-size: 17px;
+            line-height: 13px;
+            text-align: center;
+        }
+
+        .icon-check::before {
+            content: "\203A";
+            position: absolute;
+            left: 37%;
+            color: white;
+        }
+        li {
+            list-style-type: none;
+        }
+        .required {
+            padding: 0;
+        }
+        .required li {
+            margin-top: 10px;
+        }
+        .blue {
+            background-color: #0d99ff;
+        }
+        .form-container {
+            background: linear-gradient(180deg, #007bff 0%, #00acff 100%);
+            border-radius: 200px 200px 0 0;
+            padding: 70px;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .upload-form {
+            display: flex;
+        }
+
+        .form-content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 18px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="file"], .label-for-upload {
+            width: 100%;
+            padding: 20px 30px;
+            border-radius: 90px;
+            border: none;
+            background-color: #fff;
+            font-size: 16px;
+            box-sizing: border-box;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="tel"] {
+            background-color: #2470a6;
+        }
+        .label-for-upload {
+            background-color: #71b1de;
+        }
+        .s1 input::placeholder {
+            color: white;
+        }
+
+        button[type="submit"] {
+            background-color: #ff9800;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #ffac4f;
+        }
+        .margin-left-200 {
+            margin-left: 200px;
+        }
+        .label-for-upload svg {
+            width: 30px;
+            height: 30px;
+            fill: #ffffff;
+            border-radius: 50%;
+            background-color: #ff763b;
+            padding: 5px;
+            box-sizing: content-box;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 770px) {
+            .main-image {
+                width: 100%;
+                height: auto;
+            }
+            .margin-100 {
+                margin: 0;
+            }
+            .description-right, .description-left {
+                padding: 20px 0 0 0;
+            }
+            p {
+                letter-spacing: 1.5px;
+            }
+            .padding-left-30, .about {
+                padding: 0;
+            }
+            .title h2 {
+                font-size: 3rem;
+            }
+            .form-container {
+                padding: 0;
+                border-radius: 100px 100px 0 0;
+            }
+            .upload-form {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .margin-left-200 {
+                margin-left: 20px;
+                padding-top: 50px;
+            }
+            .d-flex {
+                display: block;
+            }
+            .form-group {
+                padding-right: 20px;
+            }
+            .button {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="app" class="margin-100">
+    <div class="container">
+    <div class="title padding-left-30">
+        <h2 v-for="(job, index) in jobs" :key="index">Ищем {{ job.name }}'a</h2>
+        <h3><span class="gradient">Трудоустройство в аккредитованную ИТ-компанию</span></h3>
+    </div>
+    </div>
+    <div class="about" v-for="(job, index) in jobs" :key="index">
+        <div class="container padding-bottom">
+            <div class="row">
+                <div class="col-xl-6 col-md-12 d-md-none">
+                    <div class="about-img">
+                        <img class="main-image" src="main-about2.jpeg" alt="Image">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-12">
+                    <div class="description-right">
+                        <p>
+                            Мы любим сложные, интересные проекты, постоянно расширяемся
+                            и именно поэтому ищем новые таланты. В коллективе Softorium вы
+                            найдете возможность воплотить идеи любого уровня нестандартности
+                            и вместе с тем перенять опыт наших ведущих разработчиков.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-12 d-none d-md-block">
+                    <div class="about-img">
+                        <img class="main-image" src="main-about2.jpeg" alt="Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container padding-bottom">
+            <div class="row">
+                <div class="col-xl-6 col-md-12">
+                    <div class="about-img">
+                        <img class="main-image" src="main-about2.jpeg" alt="Image">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-12">
+                    <div class="description-left">
+                        <h5>Необходимый минимум:</h5>
+                        <ul class="required">
+                            <li v-for="(requirement, index) in job.min_requirements" :key="index">
+                                <span class="icon-check"></span>
+                                {{ requirement.name }}
+                            </li>
+                        </ul>
+                        <h5>Преимуществом будет знание:</h5>
+                        <div class="skills-info">
+                        <ul class="skills-list">
+                            <li class="skill oneS" :style="{ background: technologies.color }" v-for="(technologies, index) in job.more_technologies" :key="index" >{{ technologies.name }}</li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container padding-bottom">
+            <div class="row">
+                <div class="col-xl-6 col-md-12 d-md-none">
+                    <div class="about-img">
+                        <img class="main-image" src="main-about2.jpeg" alt="Image">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-12">
+                    <div class="description-right">
+                        <h5>Чем предстоит заниматься:</h5>
+                        <ul class="required">
+                            <li v-for="(task, index) in job.tasks" :key="index">
+                                <span class="icon-check blue"></span>
+                                {{ task.name }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-12 d-none d-md-block">
+                    <div class="about-img">
+                        <img class="main-image" src="main-about2.jpeg" alt="Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container padding-bottom">
+            <div class="row">
+                <div class="col-xl-6 col-md-12">
+                    <div class="about-img">
+                        <img class="main-image" src="main-about2.jpeg" alt="Image">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-12">
+                    <div class="description-left">
+                        <h5>Со своей стороны мы готовы предложить:</h5>
+                        <ul class="required">
+                            <li v-for="(offer, index) in job.list_offer" :key="index">
+                                <span class="icon-check"></span>
+                                {{ offer.name }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-container">
+    <div class="wefwe">
+        <div class="row">
+            <form class="upload-form">
+                <div class="col-xl-7 col-md-12 margin-left-200">
+                    <h3>Расскажи о своих компетенциях и мы обязательно придем с ответом в течение двух рабочих дней</h3>
+                    <div class="form-group d-flex s1">
+                        <label for="name"></label>
+                        <input type="text" id="name" name="name" placeholder="Имя">
+                        <label for="phone"></label>
+                        <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" id="resume" name="resume" hidden>
+                        <label class="label-for-upload" for="resume">
+                            <svg width="30px" height="30px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6875 3.75C8.96439 3.75 7.5 5.23565 7.5 7.15385L7.5 15.4615C7.5
+                                    18.1444 9.55201 20.25 12 20.25C14.448 20.25 16.5 18.1444 16.5 15.4615V7.15385H18V15.4615C18 18.8963 15.351 21.75
+                                    12 21.75C8.649 21.75 6 18.8963 6 15.4615L6 7.15385C6 4.48383 8.06137 2.25 10.6875 2.25C13.3136 2.25 15.375 4.48383
+                                    15.375 7.15385V15.4615C15.375 17.3669 13.9013 18.9808 12 18.9808C10.0987 18.9808 8.625 17.3669 8.625
+                                    15.4615V7.15385H10.125V15.4615C10.125 16.615 11.0018 17.4808 12 17.4808C12.9982 17.4808 13.875 16.615
+                                    13.875 15.4615V7.15385C13.875 5.23565 12.4106 3.75 10.6875 3.75Z" fill="#ffffff"></path>
+                                </g>
+                            </svg>
+                            Резюме можно просто перетащить сюда
+                        </label>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-md-12">
+                    <button class="button" type="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Vue.js -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script setup>
+    const { createApp, ref, onMounted } = Vue;
+    const app = createApp({
+        setup() {
+            const jobs = ref([]);
+            const skillColors = [
+                'darkorange',
+                '#3498db',
+                'rgba(97,231,190,0.68)',
+                'rgba(69,36,139,0.83)',
+                'rgba(60,86,139,0.83)',
+                'rgba(11,36,91,0.91)'
+            ];
+            const getRandomColor = () => {
+                return skillColors[Math.floor(Math.random() * skillColors.length)];
+            };
+            const fetchJobs = async () => {
+                try {
+                    const params = new URLSearchParams(window.location.search);
+                    const slug = params.get('slug');
+                    const response = await axios.get(`https://newsite.softorium.pro/admin-area/api/visitor/vacancy/${slug}`);
+
+                    if (response.data) {
+                        const job = response.data;
+                        console.log('Данные о вакансии:', job);
+                        job.more_technologies = job.more_technologies.map(tech => ({
+                            ...tech,
+                            color: getRandomColor()
+                        }));
+                        app.jobName = job.name;
+                        jobs.value = [job];
+                    }
+                } catch (error) {
+                    console.error('Ошибка при получении данных о вакансии:', error);
+                }
+            };
+            onMounted(fetchJobs);
+            return { jobs };
+        }
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>

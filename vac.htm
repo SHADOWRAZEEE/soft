@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softorium Jobs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: aliceblue;
+        }
+
+        .content {
+            padding: 20px;
+            margin-left: 30px;
+        }
+        .job-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .button {
+            margin-top: -50px;
+            background-color: #fff;
+            color: #3498db;
+            border: 1px solid #3498db;
+            margin-left: 22px;
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            position: relative;
+            margin-right: 40px;
+        }
+
+        .button:hover {
+            background-color: aliceblue;
+        }
+
+        .job-card {
+            background-color: white;
+            border-top-left-radius: 140px 180px;
+            border-top-right-radius: 140px 180px;
+            border-bottom-left-radius: 140px 180px;
+            border-bottom-right-radius: 140px 180px;
+            padding: 20px;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: unset;
+            width: 95rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .job-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: black;
+            font-weight: bold;
+        }
+        .skills-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .skills-info p {
+            white-space: nowrap;
+            color: black;
+            margin: 0;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .skill {
+            display: inline-block;
+            background-color: #f39c12;
+            color: #fff;
+            padding: 3px 15px;
+            border-radius: 25px 0 25px 0;
+            margin-left: 5px;
+        }
+        .gradient {
+            background: linear-gradient(to right, #3498db, #ff8c00 40%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 25px;
+            margin-top: 5px;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #3498db 30%, #ff8c00, transparent 60%);
+            margin-left: -500px;
+        }
+        .margin-200 {
+            margin-left: 200px;
+        }
+
+        h2 {
+            font-size: 3rem;
+        }
+        .no-button {
+            display: none;
+        }
+        .title {
+            margin-top: 30px;
+        }
+        @media screen and (max-width: 770px) {
+            hr {
+                margin-left: -25px;
+            }
+            .job-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .job-title {
+                font-size: 22px;
+            }
+            .job-card {
+                width: 100%;
+                border-radius: 50px;
+                padding: 0;
+                margin-bottom: 105px;
+            }
+            .content {
+                margin-left: 0;
+            }
+            .job-content .skills, .job-content .more-skills {
+                margin-top: 10px;
+            }
+            .button-container {
+                z-index: -1;
+            }
+
+            .job-content .button {
+                margin-top: 20px;
+            }
+            .margin-200 {
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+            .skills-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .skill {
+                flex-basis: calc(33.33% - 10px);
+                margin: 5px 2px;
+                white-space: nowrap;
+            }
+            .skills-info {
+                display: block;
+            }
+            .need {
+                text-align: right;
+                width: 80%;
+                margin-left: 40px;
+            }
+            .skills-info p{
+                font-size: 18px;
+            }
+            .button {
+                margin-left: 20rem;
+            }
+            .no-button {
+                z-index: -999999;
+                margin-top: -230px;
+                display: block;
+            }
+        }
+        @media  screen and (max-width: 500px){
+            .button {
+                margin-left: 13rem;
+            }
+        }
+        @media  screen and (max-width: 420px) and (min-width: 361px){
+            .job-card {
+                width: 92%;
+            }
+            .need {
+                margin-left: 18px;
+            }
+            .button {
+                margin-left: 9rem;
+            }
+        }
+        @media  screen and (max-width: 361px){
+            .button {
+                margin-left: 10rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="app" class="container margin-200">
+    <div class="title">
+    <h2>Хочешь работать над <span class="gradient">интересными проектами?</span></h2>
+    </div>
+    <hr>
+    <h4 class="need">в команду Softorium требуются:</h4>
+    <div class="job-card" v-for="(job, index) in jobs" :key="index">
+        <div class="content">
+            <h2 class="job-title">{{ job.name }}</h2>
+            <div class="job-content">
+                <div class="text-info">
+                    <div class="skills-info">
+                        <p>Основной стек:</p>
+                        <ul class="skills-list">
+                            <li class="skill"  v-for="(tech, techIndex) in job.main_technologies" :key="techIndex" :style="{ background: tech.color }">{{ tech.name }}</li>
+                        </ul>
+                    </div>
+                    <div class="skills-info">
+                        <p>Будет плюсом, если вы владеете:</p>
+                        <ul class="skills-list">
+                            <li class="skill" v-for="(moreTech, moreTechIndex) in job.more_technologies" :key="moreTechIndex" :style="{ background: moreTech.color }">{{ moreTech.name }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="button">
+                        <a :href="'vacancy.htm?slug=' + job.slug">
+                        Подробнее
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 712 712" style="width: 107px; height: 107px; position: absolute; bottom: -64px; right: -48px; transform: rotate(45deg);"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3
+                        0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3
+                        0l160-160z" fill="#3498db"/></svg>
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button class="button no-button"></button>
+    </div>
+</div>
+<!-- Vue.js -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    const { createApp, ref, onMounted  } = Vue;
+    const app = createApp({
+        setup() {
+
+            const jobs = ref([
+
+            ]);
+            const skillColors = [
+                'darkorange',
+                '#3498db',
+                'rgba(97,231,190,0.68)',
+                'rgba(69,36,139,0.83)',
+                'rgba(60,86,139,0.83)',
+                'rgba(11,36,91,0.91)'
+            ];
+            const getRandomColor = () => {
+                return skillColors[Math.floor(Math.random() * skillColors.length)];
+            };
+            const fetchJobs = async () => {
+                try {
+                    const response = await axios.get('https://newsite.softorium.pro/admin-area/api/visitor/vacancy');
+                    jobs.value = response.data.map(job => {
+                        job.main_technologies = job.main_technologies.map(tech => {
+                            if (tech.name.toLowerCase() === 'django rest framework') {
+                                return { name: 'Django', color: getRandomColor() };
+                            }
+                            return { ...tech, color: getRandomColor() };
+                        });
+
+                        job.more_technologies = job.more_technologies.map(tech => {
+                            if (tech.name.toLowerCase() === 'django rest framework') {
+                                return { name: 'Django', color: getRandomColor() };
+                            }
+                            return { ...tech, color: getRandomColor() };
+                        });
+
+                        return job;
+                    });
+                } catch (error) {
+                    console.error('Ошибка при получении данных о вакансиях:', error);
+                }
+            };
+            onMounted(fetchJobs);
+
+            return { jobs };
+        }
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>
