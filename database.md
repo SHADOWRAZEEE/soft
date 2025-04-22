@@ -11,24 +11,24 @@ Moderately High	60-77
 High	78-89
 Very High	90-95
 Exceptionally High	96-100
-## Перевод названий черт/подчерт – предпочтительный вариант (в скобках возможный вариант):
-Trait (personality domain)	Черта
+## Перевод названий черт/подчерт – предпочтительный вариант:
+1.	Trait (personality domain)	Черта
 Neuroticism	Нейротизм
 Agreeableness	Доброжелательность
 Conscientiousness	Добросовестность
 Extraversion	Экстраверсия
-Openness	Открытость новому опыту;
-Facet (sub-trait, aspect, attribute)	Подчерта (Аспект)
-volatility	Изменчивость
-withdrawal	Замкнутость
+Openness	Открытость
+2.	Facet (sub-trait, aspect, attribute)	Подчерта (Аспект)
+volatility	Раздражительность
+withdrawal	Тревожность
 compassion	Сочувствие
-politeness	Тактичность
-industriousness	Трудолюбие
+politeness	Вежливость
+industriousness	Усердие
 orderliness	Организованность
 enthusiasm	Энтузиазм
-assertiveness	Настойчивость
-intellect	Абстрактное мышление
-aesthetics	Чувствительность к красоте
+assertiveness	Напористость
+intellect	Любознательность
+aesthetics	Креативность
 ## Средние значения процентилей для мужчин и женщин
 1.	Neuroticism: men - 40, women - 60
 2.	Agreeableness: men – 38.5, women – 61.5
